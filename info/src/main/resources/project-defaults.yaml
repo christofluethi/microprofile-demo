@@ -10,3 +10,9 @@ thorntail:
   microprofile:
     health:
       security-realm: HealthRealm
+  jaeger:
+    agent-host: jaeger
+    agent-port: 6831
+    service-name: info
+    sampler-type: const
+    sampler-parameter: 1

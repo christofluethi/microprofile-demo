@@ -5,6 +5,7 @@ import org.eclipse.microprofile.metrics.annotation.Timed;
 import org.eclipse.microprofile.openapi.annotations.Operation;
 import org.eclipse.microprofile.openapi.annotations.responses.APIResponse;
 import org.eclipse.microprofile.openapi.annotations.tags.Tag;
+import org.eclipse.microprofile.opentracing.Traced;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
@@ -25,6 +26,7 @@ public class InfoResource {
     @Timed(name = "info_timed", absolute = true)
     @Operation(description = "Get informations")
     @APIResponse(responseCode = "200", description = "Successful, returning informations")
+    @Traced(operationName = "GetInfo")
     public String get() throws UnknownHostException {
         return "Hello from "+ InetAddress.getLocalHost().getHostName()+" at "+ InetAddress.getLocalHost().getHostAddress();
     }
