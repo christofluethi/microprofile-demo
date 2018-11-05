@@ -6,7 +6,7 @@ Cloud Native development with Thorntail and Microprofile
 ![logo](https://raw.githubusercontent.com/christofluethi/microprofile-demo/master/gfx/microprofile13.png)
 
 ## Involved
-<img src="https://raw.githubusercontent.com/christofluethi/microprofile-demo/master/gfx/diagram.png" alt="env" width="400px"/>
+<img src="https://raw.githubusercontent.com/christofluethi/microprofile-demo/master/gfx/diagram.png" alt="env" />
 
 
 ### Microprofiles
