@@ -9,11 +9,11 @@ Cloud Native development with Thorntail and Microprofile
 <img src="https://raw.githubusercontent.com/christofluethi/microprofile-demo/master/gfx/diagram.png" alt="env" />
 
 ## URLs
-Throntail Application: http://localhost:8180/resource/info
-Prometheus: http://localhost:9090
-Grafana: http://localhost:9091
-SwaggerUI: http://localhost:9092
-Jagger: http://localhost:9093
+* Throntail Application: http://localhost:8180/resource/info
+* Prometheus: http://localhost:9090
+* Grafana: http://localhost:9091
+* SwaggerUI: http://localhost:9092
+* Jagger: http://localhost:9093
 
 ### Microprofiles
 * JAX-RS
