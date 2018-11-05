@@ -2,6 +2,9 @@ package ch.shaped.microprofile.demo.app.info;
 
 import org.eclipse.microprofile.metrics.annotation.Counted;
 import org.eclipse.microprofile.metrics.annotation.Timed;
+import org.eclipse.microprofile.openapi.annotations.Operation;
+import org.eclipse.microprofile.openapi.annotations.responses.APIResponse;
+import org.eclipse.microprofile.openapi.annotations.tags.Tag;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
@@ -13,12 +16,15 @@ import java.net.SocketException;
 import java.net.UnknownHostException;
 
 @Path("/info")
+@Tag(name = "Info Resource", description = "Providing simple information")
 public class InfoResource {
 
     @GET
     @Produces(MediaType.TEXT_PLAIN)
-    @Counted(monotonic = true, name = "info-count", absolute = true)
-    @Timed(name = "info-time", absolute = true)
+    @Counted(monotonic = true, name = "info_requests", absolute = true)
+    @Timed(name = "info_timed", absolute = true)
+    @Operation(description = "Get informations")
+    @APIResponse(responseCode = "200", description = "Successful, returning informations")
     public String get() throws UnknownHostException {
         return "Hello from "+ InetAddress.getLocalHost().getHostName()+" at "+ InetAddress.getLocalHost().getHostAddress();
     }

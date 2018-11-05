@@ -1,0 +1,51 @@
+version: '3' 
+services:
+  info:
+    image: docker.shaped.ch/microprofile-info
+    hostname: info
+    networks:
+      - mpdemo
+    ports:
+      - 8180:8080
+
+  prometheus:
+    image: prom/prometheus
+    hostname: prometheus
+    networks:
+      - mpdemo
+    ports:
+      - 9090:9090
+    volumes:
+      - ./config/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
+
+  grafana:
+    image: grafana/grafana
+    hostname: grafana
+    networks:
+      - mpdemo
+    ports:
+      - 9091:3000
+    environment:
+      - GF_SECURITY_ADMIN_PASSWORD=admin
+    volumes:
+      - ./config/grafana/microprofile-metrics.json:/etc/grafana/provisioning/dashboards/microprofile-metrics.json
+
+  swaggerui:
+    image: swaggerapi/swagger-ui
+    hostname: swaggerui
+    networks:
+      - mpdemo
+    ports:
+      - 9092:8080
+    environment:
+      - API_URL=http://generator.swagger.io/api/swagger.json
+      - URL=http://localhost:8180/openapi
+
+networks:
+  mpdemo:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+      - subnet: 192.168.50.0/24
+
