@@ -1,9 +1,9 @@
 # Microprofile demo using Thorntail
 Cloud Native development with Thorntail and Microprofile
 
-![logo](https://raw.githubusercontent.com/christofluethi/microprofile-demo/master/microprofile-logo.png)
+![logo](https://raw.githubusercontent.com/christofluethi/microprofile-demo/master/gfx/microprofile-logo.png)
 
-![logo](https://raw.githubusercontent.com/christofluethi/microprofile-demo/master/microprofile13.png)
+![logo](https://raw.githubusercontent.com/christofluethi/microprofile-demo/master/gfx/microprofile13.png)
 
 ## Involved
 
@@ -22,12 +22,12 @@ Cloud Native development with Thorntail and Microprofile
 * OpenAPI
 
 ### Technologies
-<img src="https://raw.githubusercontent.com/christofluethi/microprofile-demo/master/thorntail.png" alt="thorntail" width="200px"/>
+<img src="https://raw.githubusercontent.com/christofluethi/microprofile-demo/master/gfx/thorntail.png" alt="thorntail" width="200px"/>
 
 ## Planned
-<img src="https://raw.githubusercontent.com/christofluethi/microprofile-demo/master/docker.jpg" alt="docker" width="200px"/>
-<img src="https://raw.githubusercontent.com/christofluethi/microprofile-demo/master/openshift.svg" alt="openshift" width="200px"/>
-<img src="https://raw.githubusercontent.com/christofluethi/microprofile-demo/master/kafka-logo.png" alt="kafka" width="200px"/>
+<img src="https://raw.githubusercontent.com/christofluethi/microprofile-demo/master/gfx/docker.jpg" alt="docker" width="200px"/>
+<img src="https://raw.githubusercontent.com/christofluethi/microprofile-demo/master/gfx/openshift.svg" alt="openshift" width="200px"/>
+<img src="https://raw.githubusercontent.com/christofluethi/microprofile-demo/master/gfx/kafka-logo.png" alt="kafka" width="200px"/>
 
 
 
