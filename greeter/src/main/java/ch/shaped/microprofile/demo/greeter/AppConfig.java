@@ -1,4 +1,4 @@
-package ch.shaped.microprofile.demo;
+package ch.shaped.microprofile.demo.greeter;
 
 import org.eclipse.microprofile.openapi.annotations.OpenAPIDefinition;
 import org.eclipse.microprofile.openapi.annotations.info.Contact;
@@ -9,7 +9,7 @@ import javax.ws.rs.ApplicationPath;
 import javax.ws.rs.core.Application;
 
 @OpenAPIDefinition(info = @Info(
-        title = "Microprofile Thorntail Demo - InfoService",
+        title = "Microprofile Thorntail Demo - GreeterService",
         version = "1.0.0",
         contact = @Contact(
                 name = "Christof Luethi",

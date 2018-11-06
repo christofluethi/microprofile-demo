@@ -1,6 +1,6 @@
-package ch.shaped.microprofile.demo.health;
+package ch.shaped.microprofile.demo.greeter.health;
 
-import ch.shaped.microprofile.demo.util.SpaceUsageUtil;
+import ch.shaped.microprofile.demo.greeter.util.SpaceUsageUtil;
 import org.eclipse.microprofile.config.inject.ConfigProperty;
 import org.eclipse.microprofile.health.Health;
 import org.eclipse.microprofile.health.HealthCheck;

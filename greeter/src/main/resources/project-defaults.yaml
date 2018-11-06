@@ -1,0 +1,18 @@
+environment: DEVELOPMENT
+thorntail:
+  management:
+    security-realms:
+      HealthRealm:
+        in-memory-authentication:
+          users:
+            health:
+              password: health
+  microprofile:
+    health:
+      security-realm: HealthRealm
+  jaeger:
+    agent-host: jaeger
+    agent-port: 6831
+    service-name: greeting
+    sampler-type: const
+    sampler-parameter: 1

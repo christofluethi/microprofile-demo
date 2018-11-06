@@ -12,6 +12,21 @@ services:
       - JAEGER_REPORTER_LOG_SPANS=true 
       - JAEGER_SAMPLER_TYPE=const
       - JAEGER_SAMPLER_PARAM=1 
+      - GREETER_HOST=greeter
+
+  greeter:
+    image: docker.shaped.ch/microprofile-greeter
+    hostname: greeter
+    networks:
+      - mpdemo
+    ports:
+      - 8181:8080
+    environment:
+      - JAEGER_SERVICE_NAME=thorntail
+      - JAEGER_REPORTER_LOG_SPANS=true 
+      - JAEGER_SAMPLER_TYPE=const
+      - JAEGER_SAMPLER_PARAM=1 
+      - GREETER_SLEEP=50
 
   prometheus:
     image: prom/prometheus

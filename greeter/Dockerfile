@@ -5,7 +5,7 @@ RUN ln -sf /usr/share/zoneinfo/Europe/Zurich /etc/localtime \
     && echo "Europe/Zurich" > /etc/timezone
 
 # Thorntail
-COPY target/infoservice-thorntail.jar /opt/thorntail.jar
+COPY target/greeterservice-thorntail.jar /opt/thorntail.jar
 
 EXPOSE 8080
 

@@ -1,6 +1,6 @@
-package ch.shaped.microprofile.demo.util;
+package ch.shaped.microprofile.demo.greeter.util;
 
-public class Usage {
+public class SpaceUsageUtil {
 
     private static final long KB = 1024;
     private static final long MB = 1024 * KB;
