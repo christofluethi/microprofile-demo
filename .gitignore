@@ -4,6 +4,7 @@
 # Misc
 .idea
 *.iml
+.thorntail-runner-cache
 out/
 target/
 .DS_Store

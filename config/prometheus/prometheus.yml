@@ -22,3 +22,8 @@ scrape_configs:
   - job_name: 'info'
     static_configs:
     - targets: ['info:8080']
+
+  - job_name: 'greeter'
+    static_configs:
+    - targets: ['greeter:8080']
+

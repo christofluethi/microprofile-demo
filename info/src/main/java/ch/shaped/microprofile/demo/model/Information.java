@@ -1,12 +1,15 @@
 package ch.shaped.microprofile.demo.model;
 
 
+import ch.shaped.microprofile.demo.greeter.Greeting;
+
 public class Information {
     private String hostname;
     private String ip;
     private String osArch;
     private String osVersion;
     private String osName;
+    private Greeting greeting;
 
     public String getOsName() {
         return osName;
@@ -46,5 +49,13 @@ public class Information {
 
     public void setOsVersion(String osVersion) {
         this.osVersion = osVersion;
+    }
+
+    public Greeting getGreeting() {
+        return greeting;
+    }
+
+    public void setGreeting(Greeting greeting) {
+        this.greeting = greeting;
     }
 }

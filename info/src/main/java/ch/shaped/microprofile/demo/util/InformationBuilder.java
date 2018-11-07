@@ -1,6 +1,7 @@
 package ch.shaped.microprofile.demo.util;
 
 import ch.shaped.microprofile.demo.model.Information;
+import ch.shaped.microprofile.demo.greeter.Greeting;
 
 public class InformationBuilder {
 
@@ -37,6 +38,11 @@ public class InformationBuilder {
 
     public InformationBuilder osName(String osName) {
         entity.setOsName(osName);
+        return this;
+    }
+
+    public InformationBuilder greeting(Greeting greeting) {
+        entity.setGreeting(greeting);
         return this;
     }
 

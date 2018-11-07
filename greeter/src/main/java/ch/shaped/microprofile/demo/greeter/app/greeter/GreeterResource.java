@@ -1,6 +1,7 @@
 package ch.shaped.microprofile.demo.greeter.app.greeter;
 
 import ch.shaped.microprofile.demo.greeter.model.Greeting;
+import ch.shaped.microprofile.demo.greeter.util.UnreliableService;
 import io.opentracing.Span;
 import io.opentracing.Tracer;
 import org.eclipse.microprofile.config.inject.ConfigProperty;
@@ -33,7 +34,11 @@ public class GreeterResource {
     @ConfigProperty(name = "GREETER_SLEEP", defaultValue = "10")
     private String greeterSleep;
 
+    @Inject
+    private UnreliableService unreliableService;
+
     @GET
+    @Path("/reliable")
     @Produces(MediaType.APPLICATION_JSON)
     @Counted(monotonic = true, name = "greeting_requests", absolute = true)
     @Timed(name = "greeting_timed", absolute = true)
@@ -44,9 +49,30 @@ public class GreeterResource {
             schema = @Schema(implementation = Greeting.class))
     )
     @Traced(operationName = "GetGreeting")
-    public Response get() throws UnknownHostException, InterruptedException {
+    public Response reliable() throws UnknownHostException, InterruptedException {
         return Response.ok(new Greeting(buildGreetingString())).build();
     }
+
+
+
+    @GET
+    @Path("/unreliable")
+    @Produces(MediaType.APPLICATION_JSON)
+    @Counted(monotonic = true, name = "unreliableGreeting_requests", absolute = true)
+    @Timed(name = "unreliableGreeting_timed", absolute = true)
+    @Operation(description = "Get UnreliableGreeting")
+    @APIResponse(responseCode = "200",
+            description = "Successful, returning friendly greeting",
+            content = @Content(mediaType = MediaType.APPLICATION_JSON,
+                    schema = @Schema(implementation = Greeting.class))
+    )
+    @Traced(operationName = "GetUnreliableGreeting")
+    public Response getUnreliable() throws UnknownHostException, InterruptedException {
+        unreliableService.pass();
+
+        return Response.ok(new Greeting(buildGreetingString())).build();
+    }
+
 
     private String buildGreetingString() throws UnknownHostException, InterruptedException {
         Span span = tracer.buildSpan("buildGreeting").start();

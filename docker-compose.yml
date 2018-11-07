@@ -12,7 +12,6 @@ services:
       - JAEGER_REPORTER_LOG_SPANS=true 
       - JAEGER_SAMPLER_TYPE=const
       - JAEGER_SAMPLER_PARAM=1 
-      - GREETER_HOST=greeter
 
   greeter:
     image: docker.shaped.ch/microprofile-greeter
