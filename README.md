@@ -112,6 +112,37 @@ Metric   | An annotation that describes the metric that is injected.
 
 Standard metrics can be found in the [MicroProfile spec](https://github.com/eclipse/microprofile-metrics/blob/master/spec/src/main/asciidoc/required-metrics.adoc)
 
+Sample Result
+
+```
+# TYPE application:info_timed_rate_per_second gauge
+application:info_timed_rate_per_second 2.9997439908192647E-12
+# TYPE application:info_timed_one_min_rate_per_second gauge
+application:info_timed_one_min_rate_per_second 3.4210458256715394E-14
+# TYPE application:info_timed_five_min_rate_per_second gauge
+application:info_timed_five_min_rate_per_second 2.310773322551314E-11
+# TYPE application:info_timed_fifteen_min_rate_per_second gauge
+application:info_timed_fifteen_min_rate_per_second 9.679151887649127E-11
+# TYPE application:info_timed_min_seconds gauge
+application:info_timed_min_seconds 0.072645071
+# TYPE application:info_timed_max_seconds gauge
+application:info_timed_max_seconds 0.428695293
+# TYPE application:info_timed_mean_seconds gauge
+application:info_timed_mean_seconds 0.07753049280863823
+# TYPE application:info_timed_stddev_seconds gauge
+application:info_timed_stddev_seconds 0.041419659260802266
+# TYPE application:info_timed_seconds summary
+application:info_timed_seconds_count 2.0
+application:info_timed_seconds{quantile="0.5"} 0.072645071
+application:info_timed_seconds{quantile="0.75"} 0.072645071
+application:info_timed_seconds{quantile="0.95"} 0.072645071
+application:info_timed_seconds{quantile="0.98"} 0.072645071
+application:info_timed_seconds{quantile="0.99"} 0.428695293
+application:info_timed_seconds{quantile="0.999"} 0.428695293
+# TYPE application:info_requests counter
+application:info_requests 2.0
+```
+
 ### OpenAPI
 * http://localhost:8180/openapi
 
