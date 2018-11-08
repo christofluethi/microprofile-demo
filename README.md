@@ -3,12 +3,20 @@ Cloud Native development with Thorntail and Microprofile
 
 ![logo](https://raw.githubusercontent.com/christofluethi/microprofile-demo/master/gfx/microprofile-logo.png)
 
-![logo](https://raw.githubusercontent.com/christofluethi/microprofile-demo/master/gfx/microprofile13.png)
+<img src="https://raw.githubusercontent.com/christofluethi/microprofile-demo/master/gfx/microprofile13.png" alt="microprofile" width="300px"/>
+
+## Webservers supporting MicroProfile
+* Thorntail (Former WildFly swarm)
+* Payara server
+* Wildfly 14 (limited to MP Health, MP Config, MP OpenTracing)
+* TomEE
+* Websphere Liberty
+* KumuluzEE
 
 ## Involved
 <img src="https://raw.githubusercontent.com/christofluethi/microprofile-demo/master/gfx/diagram.png" alt="env" />
 
-## URLs
+## Project URLs
 * Throntail Application: http://localhost:8180/resource/info
 * Prometheus: http://localhost:9090
 * Grafana: http://localhost:9091
@@ -18,6 +26,8 @@ Cloud Native development with Thorntail and Microprofile
 ### Microprofiles
 * JAX-RS
     * http://localhost:8180/resource/info
+    * http://localhost:8180/resource/greeting/reliable
+    * http://localhost:8180/resource/greeting/unreliable
 * Config
 * CDI
 * HealthCheck
@@ -30,10 +40,6 @@ Cloud Native development with Thorntail and Microprofile
     * http://localhost:8180/metrics/application
 * OpenAPI
     * http://localhost:8180/openapi
-
-### Technologies
-<img src="https://raw.githubusercontent.com/christofluethi/microprofile-demo/master/gfx/thorntail.png" alt="thorntail" width="200px"/>
-<img src="https://raw.githubusercontent.com/christofluethi/microprofile-demo/master/gfx/docker.jpg" alt="docker" width="200px"/>
 
 ## Samples
 
