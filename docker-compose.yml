@@ -36,6 +36,28 @@ services:
       - 9090:9090
     volumes:
       - ./config/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
+      - ./config/prometheus/alert.rules:/etc/prometheus/alert.rules
+
+  alertmanager:
+    image: prom/alertmanager
+    hostname: alertmanager
+    networks:
+      - mpdemo
+    volumes:
+      - ./config/alertmanager/alertmanager.yml:/etc/alertmanager/alertmanager.yml
+
+  telegrambot:
+    image: metalmatze/alertmanager-bot:0.3.1
+    hostname: telegrambot
+    networks:
+      - mpdemo
+    env_file:
+      - telegram.env
+    environment:
+      - LISTEN_ADDR=0.0.0.0:8080
+      - ALERTMANAGER_URL=http://alertmanager:9093
+      - BOLT_PATH=/data/bot.db
+      - STORE=bolt
 
   grafana:
     image: grafana/grafana

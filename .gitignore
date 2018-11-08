@@ -10,6 +10,9 @@ target/
 .DS_Store
 Thumbs.db
 
+# Env files
+.env
+
 # Log file
 *.log
 
