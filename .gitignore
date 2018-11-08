@@ -11,7 +11,7 @@ target/
 Thumbs.db
 
 # Env files
-.env
+*.env
 
 # Log file
 *.log

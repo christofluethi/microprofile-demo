@@ -7,11 +7,6 @@ services:
       - mpdemo
     ports:
       - 8180:8080
-    environment:
-      - JAEGER_SERVICE_NAME=thorntail
-      - JAEGER_REPORTER_LOG_SPANS=true 
-      - JAEGER_SAMPLER_TYPE=const
-      - JAEGER_SAMPLER_PARAM=1 
 
   greeter:
     image: docker.shaped.ch/microprofile-greeter
@@ -21,10 +16,6 @@ services:
     ports:
       - 8181:8080
     environment:
-      - JAEGER_SERVICE_NAME=thorntail
-      - JAEGER_REPORTER_LOG_SPANS=true 
-      - JAEGER_SAMPLER_TYPE=const
-      - JAEGER_SAMPLER_PARAM=1 
       - GREETER_SLEEP=50
 
   prometheus:

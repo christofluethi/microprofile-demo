@@ -1,7 +1,7 @@
 package ch.shaped.microprofile.demo.app.info;
 
-import ch.shaped.microprofile.demo.model.Information;
 import ch.shaped.microprofile.demo.greeter.RemoteGreeterService;
+import ch.shaped.microprofile.demo.model.Information;
 import ch.shaped.microprofile.demo.util.InformationBuilder;
 import org.eclipse.microprofile.config.Config;
 import org.eclipse.microprofile.config.ConfigProvider;
@@ -16,7 +16,6 @@ import org.eclipse.microprofile.opentracing.Traced;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
@@ -29,7 +28,6 @@ import java.net.UnknownHostException;
 
 @Path("/info")
 @Tag(name = "Info Resource", description = "Providing simple information")
-@ApplicationScoped
 public class InfoResource {
 
     private static final Logger logger = LoggerFactory.getLogger(InfoResource.class);

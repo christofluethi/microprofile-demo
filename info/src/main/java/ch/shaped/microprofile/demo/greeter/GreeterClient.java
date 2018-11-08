@@ -1,5 +1,7 @@
 package ch.shaped.microprofile.demo.greeter;
 
+import org.eclipse.microprofile.openapi.annotations.Operation;
+
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
@@ -13,9 +15,11 @@ public interface GreeterClient {
 
     @GET
     @Path("/reliable")
+    @Operation(hidden = true)
     Greeting getReliableGreeting();
 
     @GET
     @Path("/unreliable")
+    @Operation(hidden = true)
     Greeting getUnreliableGreeting();
 }
