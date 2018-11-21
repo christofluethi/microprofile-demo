@@ -8,6 +8,7 @@ services:
     ports:
       - 8180:8080
 
+
   greeter:
     image: docker.shaped.ch/microprofile-greeter
     hostname: greeter

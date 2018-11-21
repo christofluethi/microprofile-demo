@@ -9,4 +9,4 @@ COPY target/infoservice-thorntail.jar /opt/thorntail.jar
 
 EXPOSE 8080
 
-CMD ["sh", "-c", "java -Djava.net.preferIPv4Stack=true -Djava.net.preferIPv4Addresses=true -jar /opt/thorntail.jar"]
+CMD ["sh", "-c", "java $JVM_ARGS -Djava.net.preferIPv4Stack=true -Djava.net.preferIPv4Addresses=true -jar /opt/thorntail.jar $JAVA_ARGS"]
