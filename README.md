@@ -48,6 +48,9 @@ Default value may also be provided in code
 
 ### HealthCheck
 * http://localhost:8180/health
+* http://localhost:8180/heap
+* http://localhost:8180/threads
+* http://localhost:8180/node
 
 Username and Password for demo: `health`
 
